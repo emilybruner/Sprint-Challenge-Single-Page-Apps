@@ -1,11 +1,20 @@
 import React from "react";
+import {
+  Card, CardBody,
+  CardTitle, CardSubtitle
+} from 'reactstrap';
 
 export default function CharacterCard(props) {
   return (
+
     <div>
-      <h2>{props.name}</h2>
-      <p>Species: {props.species}</p>
-      <p>Status: {props.status}</p>
+      <Card>
+        <CardBody body inverse color="success">
+          <CardTitle body className="text-center">{props.name}</CardTitle>
+          <CardSubtitle body className="text-center">{props.species}</CardSubtitle>
+          <CardSubtitle body className="text-center">{props.status}</CardSubtitle>
+        </CardBody>
+      </Card>
     </div>
   )
 }

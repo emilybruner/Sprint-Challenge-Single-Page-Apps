@@ -37,3 +37,17 @@ main {
 header h1 {
   text-align: center;
 }
+
+.card{
+  margin: 2%;
+  background-color: darkgreen !important;
+  color: white !important;
+}
+
+.main-img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+
+}
