@@ -15,7 +15,9 @@ export default function WelcomePage() {
             src="https://rickandmortyapi.com/api/character/avatar/1.jpeg"
             alt="rick"
           />
-          <Link to="/characters"><Button color="primary">View Characters</Button></Link>
+          <div class="row justify-content-center">
+            <Link to="/characters"><Button color="primary">View Characters</Button></Link>
+          </div>
         </header>
       </Jumbotron>
     </section>

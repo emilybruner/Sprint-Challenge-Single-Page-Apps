@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import CharacterCard from "./CharacterCard";
+import { Button } from 'reactstrap';
 
 export default function CharacterList() {
   const [character, setCharacter] = useState([])
@@ -25,8 +26,8 @@ export default function CharacterList() {
 
   return (
     <section className="character-list">
-      <Link to="/"><button>Home</button></Link>
-      <Link to="/search"><button>Search</button></Link>
+      <Link to="/"><Button color="primary">Home</Button></Link>{" "}
+      <Link to="/search" ><Button color="info">Search</Button></Link>{" "}
       {character.map(char => (
         <CharacterCard key={char.id} name={char.name} species={char.species} status={char.status} />
 
