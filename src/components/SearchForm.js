@@ -4,20 +4,20 @@ import CharacterCard from "./CharacterCard";
 
 
 export default function SearchForm() {
-  const [searchTerm, setSearchTerm] = useState("");
-  const [searchResults, setSearchResults] = useState([]);
+  const [data, setData] = useState("");
+  const [query, setQuery] = useState([]);
 
   useEffect(() => {
     axios.get("https://rickandmortyapi.com/api/character/")
       .then(response => {
-        const characters = response.data.results.filter(char => char.name.toLowerCase().includes(searchResults.toLowerCase())
+        const characters = response.data.results.filter(char => char.name.toLowerCase().includes(query.toLowerCase())
         );
-        setSearchTerm(characters);
+        setData(characters);
       })
-  }, [searchResults])
+  }, [query])
 
   const handleChange = event => {
-    setSearchResults(event.target.value);
+    setQuery(event.target.value);
   }
   return (
     <section className="search-form">
@@ -28,18 +28,16 @@ export default function SearchForm() {
           type="text"
           name="textfield"
           placeholder="Search"
-          value={searchTerm}
+          value={query}
           onChange={handleChange}
         />
       </form>
-      <div className="character-list">
 
-        {searchResults.map((char => {
-          return (<CharacterCard key={char.id} name={char.name} species={char.species} status={char.status} />)
-        }
-        ))}
+      {data.map((char => {
+        return (<CharacterCard key={char.id} name={char.name} species={char.species} status={char.status} />)
+      }
+      ))}
 
-      </div>
     </section>
   );
 }
