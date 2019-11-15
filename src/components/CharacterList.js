@@ -15,7 +15,7 @@ export default function CharacterList() {
           console.log(response);
         })
         .catch(error => {
-          console.log('Server Error', error);
+          console.log("Server Error", error);
         });
     };
     getCharacters();
@@ -26,10 +26,10 @@ export default function CharacterList() {
   return (
     <section className="character-list">
       <Link to="/"><button>Home</button></Link>
+      <Link to="/search"><button>Search</button></Link>
       {character.map(char => (
-        <Link to={`/character/${character.id}`} >
-          <CharacterCard key={char.id} name={char.name} species={char.species} status={char.status} />
-        </Link>
+        <CharacterCard key={char.id} name={char.name} species={char.species} status={char.status} />
+
       ))}
     </section>
   );
