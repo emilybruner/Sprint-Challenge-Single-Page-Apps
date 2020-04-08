@@ -27,7 +27,7 @@ Demonstrate your understanding of this Sprint's concepts by answering the follow
 
 - [ ]  Explain benefit(s) using `client-side routing`?
 
-> Answer:
+> Answer: SInce the route is handled internally by the JavaScript that is loaded on the page, less data is processed and routing between views is typically faster. It is also easier to implement smooth transitions and animations. 
 
 ## Project Set Up
 
